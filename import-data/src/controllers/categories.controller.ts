@@ -129,7 +129,7 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
 };
 
 // Import categories from CSV
-export const importCategories = (csvFilePath: string = './data/categories.csv'): Promise<void> => {
+export const importCategories = (csvFilePath: string = '.src/data/categories.csv'): Promise<void> => {
   logger.info('Reached importCategories Method',csvFilePath);
   
   const resolvedPath = path.resolve(csvFilePath);
@@ -152,5 +152,5 @@ export const importCategories = (csvFilePath: string = './data/categories.csv'):
 //   deleteAllCategories();
 // } else if (process.env.IMPORT === 'true') {
   console.log('Importing categories...');
-  importCategories('./data/categories.csv'); // CSV path can now be set via environment variable
+  importCategories('.src/data/categories.csv'); // CSV path can now be set via environment variable
 // }
