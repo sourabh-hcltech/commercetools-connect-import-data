@@ -142,11 +142,10 @@ export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH
   return require('csvtojson')()
     .fromFile(resolvedPath)
     .then((rawJson: Category[]) =>
-      logger.info('Categories import in progress')
-      //saveRecursive(groupByParent(setParent(rawJson)))
+      saveRecursive(groupByParent(setParent(rawJson)))
     )
     .then(() =>
-      logger.info('Categories imported successfully')
+      console.log('Categories imported successfully')
     )
     .catch((err: Error) =>
       logAndExit(err, 'Failed to import categories')
