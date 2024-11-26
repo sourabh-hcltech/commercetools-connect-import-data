@@ -17,5 +17,7 @@ deployAs:
           description: client secret from commercetools composable commerce project
         - key: CTP_SCOPE
           description: scope from commercetools composable commerce project
+        - key: CSV_FILE_PATH
+          description: csv File Path for categories
         
   

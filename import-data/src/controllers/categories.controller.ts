@@ -128,12 +128,17 @@ const saveRecursive = (groupedCategories: GroupedCategories): Promise<SaveResult
   return recur(groupedCategories, 0, []);
 };
 
-// Import categories from CSV
-export const importCategories = (csvFilePath: string = '.src/data/categories.csv'): Promise<void> => {
+export const importCategories = (csvFilePath: string = process.env.CSV_FILE_PATH || './data/categories.csv'): Promise<void> => {
   logger.info('Reached importCategories Method',csvFilePath);
-  
+ 
+
   const resolvedPath = path.resolve(csvFilePath);
+  logger.info('Reached resolvedPath Method',resolvedPath);
   
+  logger.info('before deleting catogires');
+  deleteAllCategories();
+  logger.info('after deleting catogires');
+
   return require('csvtojson')()
     .fromFile(resolvedPath)
     .then((rawJson: Category[]) =>
@@ -147,10 +152,4 @@ export const importCategories = (csvFilePath: string = '.src/data/categories.csv
     );
 };
 
-// Execute operations based on environment configuration (via dotenv)
-// if (process.env.CLEAN === 'true') {
-//   deleteAllCategories();
-// } else if (process.env.IMPORT === 'true') {
-  console.log('Importing categories...');
-  importCategories('.src/data/categories.csv'); // CSV path can now be set via environment variable
-// }
+

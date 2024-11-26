@@ -37,7 +37,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@commercetools-backend/loggers": "^21.19.0",
+    "@commercetools-backend/loggers": "^22.35.1",
     "@commercetools/api-request-builder": "^6.0.0",
     "@commercetools/platform-sdk": "^4.0.0",
     "@commercetools/sdk-client": "^3.0.0",
@@ -51,7 +51,7 @@
     "glob": "^11.0.0",
     "isomorphic-fetch": "^3.0.0",
     "lru-cache": "^11.0.2",
-    "nconf": "^0.10.0",
+    "nconf": "^0.12.1",
     "validator": "^13.11.0"
   }
 }
